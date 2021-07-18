@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="demo.FundTransferTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-08T19:54:06" hostname="DESKTOP-1AEEV3K" time="5.173">
+<testsuite name="demo.FundTransferTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-18T21:35:25" hostname="PSOFKA0293" time="4.168">
   <properties/>
-  <testcase name="payeesAccountNoObligatoriedad" classname="demo.FundTransferTest" time="5.173"/>
+  <testcase name="payeesAccountNoObligatoriedad" classname="demo.FundTransferTest" time="4.168"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 7024
+  <system-err><![CDATA[Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 48165
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-may 08, 2021 2:54:08 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1626644126.708][WARNING]: This version of ChromeDriver has not been tested with Chrome version 91.
+jul 18, 2021 4:35:26 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFORMACIÓN: Detected dialect: W3C
 ]]></system-err>
 </testsuite>

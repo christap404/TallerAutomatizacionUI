@@ -1,5 +1,6 @@
 package pages;
 
+import models.Customer;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -51,4 +52,12 @@ public class NewCustomerPage {
         password.sendKeys("dinero");
         submitButton.click();
     }
+
+    public Customer obtenerInfoCustomer(){
+        Customer customer = new Customer(
+
+        );
+        return customer;
+    }
+
 }

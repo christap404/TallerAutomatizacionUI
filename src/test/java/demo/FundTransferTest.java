@@ -1,5 +1,6 @@
 package demo;
 
+import models.Customer;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pages.FundTransferPage;
 import pages.HomePage;
 import pages.LoginPage;
+import pages.NewCustomerPage;
 
 public class FundTransferTest {
 
@@ -22,7 +24,6 @@ public class FundTransferTest {
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
         webDriver.get("http://demo.guru99.com/V4/index.php");
-
     }
 
     @Test
@@ -35,5 +36,16 @@ public class FundTransferTest {
         fundTransferPage.llenarFormularioSinPayeesAccount();
         fundTransferPage.clickSubmit();
         Assert.assertEquals(webDriver.switchTo().alert().getText(), "Please fill all fields");
+    }
+
+    @Test
+    public void makeFoundTransfer(){
+        Customer customer;
+        loginPage = new LoginPage(webDriver);
+        loginPage.loguearse();
+        homePage = new HomePage(webDriver);
+        homePage.clickNewCustomer();
+        NewCustomerPage newCustomerPage = new NewCustomerPage(webDriver);
+        newCustomerPage.crearCustomer();
     }
 }

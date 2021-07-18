@@ -17,12 +17,12 @@ public class LoginPage {
         this.webDriver = webDriver;
         this.userBox = webDriver.findElement(By.name("uid"));
         this.password = webDriver.findElement(By.name("password"));
-        this.loginButton = webDriver.findElement(By.name("btnLogin"));;
+        this.loginButton = webDriver.findElement(By.name("btnLogin"));
     }
 
     public void loguearse(){
-        userBox.sendKeys("mngr325498");
-        password.sendKeys("hUhemyv");
+        userBox.sendKeys("mngr342122");
+        password.sendKeys("jApatYd");
         loginButton.click();
 
         WebElement welcomeMessage = webDriver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[3]/td"));

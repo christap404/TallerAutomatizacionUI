@@ -27,7 +27,7 @@ public class LoginTest {
     public void login() throws InterruptedException {
         loginPage.loguearse();
         WebElement welcomeMessage = webDriver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[3]/td"));
-        Assert.assertEquals(welcomeMessage.getText(), "Manger Id : mngr325498");
+        Assert.assertEquals(welcomeMessage.getText(), "Manger Id : mngr342122");
     }
 
 }
