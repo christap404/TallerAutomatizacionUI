@@ -5,6 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import javax.xml.xpath.XPath;
+import java.util.Calendar;
+import java.util.Date;
+
 public class NewCustomerPage {
     public WebElement customerName;
     public WebElement maleRadio;
@@ -19,6 +23,8 @@ public class NewCustomerPage {
     public WebElement password;
     public WebElement submitButton;
     public WebDriver webDriver;
+    public WebElement resetButton;
+    public WebElement homeButton;
 
 
     public NewCustomerPage(WebDriver webDriver){
@@ -35,28 +41,50 @@ public class NewCustomerPage {
         email = webDriver.findElement(By.name("emailid"));
         password = webDriver.findElement(By.name("password"));
         submitButton = webDriver.findElement(By.name("sub"));
+        resetButton = webDriver.findElement(By.name("res"));
     }
 
-    public void crearCustomer(){
-        customerName.sendKeys("pancho plata");
+    public void crearCustomer(String nombre, String dia, String mes, String anno, String direccion,
+    String ciudad, String estado, String pin, String celular, String email, String contrasenna){
+        Calendar calendar = Calendar.getInstance();
+        customerName.sendKeys(nombre);
         maleRadio.click();
-        dateOfBirth.sendKeys("23");
-        dateOfBirth.sendKeys("11");
-        dateOfBirth.sendKeys("1996");
-        address.sendKeys("calle signo dinero");
-        city.sendKeys("dinerolandia");
-        state.sendKeys("doular");
-        pin.sendKeys("123");
-        mobileNumber.sendKeys("31234566");
-        email.sendKeys("dinero@capitalismo.com");
-        password.sendKeys("dinero");
+        dateOfBirth.sendKeys(dia);
+        dateOfBirth.sendKeys(mes);
+        dateOfBirth.sendKeys(anno);
+        address.sendKeys(direccion);
+        city.sendKeys(ciudad);
+        state.sendKeys(estado);
+        this.pin.sendKeys(pin);
+        mobileNumber.sendKeys(celular);
+        this.email.sendKeys(String.valueOf(new Date().getTime()).substring(10,12) +email);
+        password.sendKeys(contrasenna);
         submitButton.click();
+    }
+
+    public void resetearFormulario(){
+        this.resetButton.click();
+    }
+
+    public void volverHome(){
+
     }
 
     public Customer obtenerInfoCustomer(){
         Customer customer = new Customer(
-
+                webDriver.findElement(By.xpath("//*[@id=\"customer\"]/tbody/tr[4]/td[2]")).getText(),
+                webDriver.findElement(By.xpath("//*[@id=\"customer\"]/tbody/tr[5]/td[2]")).getText(),
+                webDriver.findElement(By.xpath("//*[@id=\"customer\"]/tbody/tr[6]/td[2]")).getText(),
+                webDriver.findElement(By.xpath("//*[@id=\"customer\"]/tbody/tr[7]/td[2]")).getText(),
+                webDriver.findElement(By.xpath("//*[@id=\"customer\"]/tbody/tr[8]/td[2]")).getText(),
+                webDriver.findElement(By.xpath("//*[@id=\"customer\"]/tbody/tr[9]/td[2]")).getText(),
+                webDriver.findElement(By.xpath("//*[@id=\"customer\"]/tbody/tr[10]/td[2]")).getText(),
+                webDriver.findElement(By.xpath("//*[@id=\"customer\"]/tbody/tr[11]/td[2]")).getText(),
+                webDriver.findElement(By.xpath("//*[@id=\"customer\"]/tbody/tr[12]/td[2]")).getText(),
+                webDriver.findElement(By.xpath("//*[@id=\"customer\"]/tbody/tr[13]/td[2]")).getText()
         );
+        homeButton = webDriver.findElement(By.xpath("/html/body/p/a"));
+        homeButton.click();
         return customer;
     }
 
