@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import javax.xml.xpath.XPath;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 
 public class NewCustomerPage {
     public WebElement customerName;
@@ -47,7 +48,7 @@ public class NewCustomerPage {
     public void crearCustomer(String nombre, String dia, String mes, String anno, String direccion,
                               String ciudad, String estado, String pin, String celular, String email, String contrasenna){
         Calendar cal = Calendar.getInstance();
-        Calendar calendar = Calendar.getInstance();
+        Random r = new Random();
         customerName.sendKeys(nombre);
         maleRadio.click();
         dateOfBirth.sendKeys(dia);
@@ -58,7 +59,7 @@ public class NewCustomerPage {
         state.sendKeys(estado);
         this.pin.sendKeys(pin);
         mobileNumber.sendKeys(celular);
-        this.email.sendKeys(String.valueOf(cal.DATE) +String.valueOf(cal.HOUR) + String.valueOf(cal.MINUTE)+String.valueOf(cal.SECOND) +email);
+        this.email.sendKeys(r.nextInt(999999) + cal.MILLISECOND +email);
         password.sendKeys(contrasenna);
         submitButton.click();
     }
