@@ -11,6 +11,7 @@ public class Customer {
     String pin;
     String celular;
     String email;
+    String accountId;
 
     public Customer(String id, String nombre, String sexo, String fechaNacimiento, String direccion, String ciudad, String estado, String pin, String celular, String email) {
         this.id = id;
@@ -23,6 +24,7 @@ public class Customer {
         this.pin = pin;
         this.celular = celular;
         this.email = email;
+        this.accountId = "";
     }
 
     public String getId() {
@@ -63,6 +65,14 @@ public class Customer {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 }
 
