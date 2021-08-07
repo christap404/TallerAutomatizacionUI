@@ -22,7 +22,7 @@ public class LoginPage {
 
     public void loguearse(){
         userBox.sendKeys("mngr342122");
-        password.sendKeys("jApatYd@1@");
+        password.sendKeys("jApatYd@1@@@");
         loginButton.click();
 
        // WebElement welcomeMessage = webDriver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[3]/td"));

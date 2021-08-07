@@ -35,7 +35,6 @@ public class changePassTest {
     public void changePass() throws InterruptedException {
         loginPage = new LoginPage(webDriver);
         loginPage.loguearse();
-        System.out.println("HOLAAAAAAAAAA");
         WebElement welcomeMessage = webDriver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[3]/td"));
         System.out.println(String.valueOf(welcomeMessage));
         Assert.assertEquals(welcomeMessage.getText(), "Manger Id : mngr342122");
@@ -47,10 +46,4 @@ public class changePassTest {
         webDriver.quit();
     }
 
-    @Test
-    public void changePassword() throws InterruptedException {
-        //webDriver.get("http://demo.guru99.com/V4/index.php");
-        homePage = new HomePage(webDriver);
-        homePage.clicChangePassword();
-    }
 }

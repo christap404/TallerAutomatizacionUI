@@ -22,9 +22,9 @@ public class changePassword {
     }
 
     public void cambiarContrasena (){
-        oldPassword.sendKeys("jApatYd@1@");
-        newPassword.sendKeys("jApatYd@1@@");
-        confirmNewPassword.sendKeys("jApatYd@1@@");
+        oldPassword.sendKeys("jApatYd@1@@");
+        newPassword.sendKeys("jApatYd@1@@@");
+        confirmNewPassword.sendKeys("jApatYd@1@@@");
         btnSubmit.click();
     }
 }
