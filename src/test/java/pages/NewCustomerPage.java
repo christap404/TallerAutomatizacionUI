@@ -54,9 +54,7 @@ public class NewCustomerPage {
     }
 
     public Customer obtenerInfoCustomer(){
-        Customer customer = new Customer(
-
-        );
+        Customer customer = new Customer();
         return customer;
     }
 

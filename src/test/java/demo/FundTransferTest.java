@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pages.FundTransferPage;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.NewCustomerPage;
+//import pages.NewCustomerPage;
 
 public class FundTransferTest {
 
@@ -45,7 +45,7 @@ public class FundTransferTest {
         loginPage.loguearse();
         homePage = new HomePage(webDriver);
         homePage.clickNewCustomer();
-        NewCustomerPage newCustomerPage = new NewCustomerPage(webDriver);
-        newCustomerPage.crearCustomer();
+        //NewCustomerPage newCustomerPage = new NewCustomerPage(webDriver);
+        //newCustomerPage.crearCustomer();
     }
 }
