@@ -45,7 +45,8 @@ public class NewCustomerPage {
     }
 
     public void crearCustomer(String nombre, String dia, String mes, String anno, String direccion,
-    String ciudad, String estado, String pin, String celular, String email, String contrasenna){
+                              String ciudad, String estado, String pin, String celular, String email, String contrasenna){
+        Calendar cal = Calendar.getInstance();
         Calendar calendar = Calendar.getInstance();
         customerName.sendKeys(nombre);
         maleRadio.click();
@@ -57,7 +58,7 @@ public class NewCustomerPage {
         state.sendKeys(estado);
         this.pin.sendKeys(pin);
         mobileNumber.sendKeys(celular);
-        this.email.sendKeys(String.valueOf(new Date().getTime()).substring(10,12) +email);
+        this.email.sendKeys(String.valueOf(cal.DATE) +String.valueOf(cal.HOUR) + String.valueOf(cal.MINUTE)+String.valueOf(cal.SECOND) +email);
         password.sendKeys(contrasenna);
         submitButton.click();
     }

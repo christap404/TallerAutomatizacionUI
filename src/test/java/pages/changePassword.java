@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.Calendar;
+
 public class changePassword {
 
     public WebDriver webDriver;
@@ -11,6 +13,7 @@ public class changePassword {
     public WebElement newPassword;
     public WebElement confirmNewPassword;
     public WebElement btnSubmit;
+    Calendar cal = Calendar.getInstance();
 
 
     public changePassword (WebDriver webDriver){
